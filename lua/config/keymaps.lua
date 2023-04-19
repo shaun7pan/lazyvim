@@ -28,6 +28,7 @@ map("n", "<C-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", { si
 map("n", "<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", { desc = "harpoon select 1", silent = true })
 map("n", "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", { desc = "harpoon select 2", silent = true })
 map("n", "<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", { desc = "harpoon select 3", silent = true })
+map("n", "<C-p>", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Markdown preview", silent = true })
 map("i", "<C-h>", "<Left>", { desc = "move left", silent = true })
 map("i", "<C-l>", "<Right>", { desc = "move right", silent = true })
 map("i", "<C-j>", "<Down>", { desc = "move down", silent = true })
