@@ -7,8 +7,8 @@ return {
       -- stylua: ignore
       {
         "<leader><space>",
-        function() require("telescope.builtin").find_files({ cwd = false }) end,
-        desc = "Find Files (cwd)",
+        function() require("telescope.builtin").live_grep({ cwd = false }) end,
+        desc = "Grep (cwd)",
       },
       {
         "<leader>fp",
