@@ -10,6 +10,14 @@ return {
         rust_analyzer = {
           settings = {
             ["rust-analyzer"] = {
+              inlayHints = {
+                closureCaptureHints = {
+                  enable = true,
+                },
+              },
+              checkOnSave = {
+                command = "clippy",
+              },
               cargo = {
                 allFeatures = true,
               },
