@@ -13,7 +13,6 @@ return {
         "lua-language-server",
         "pyright",
         "rust-analyzer",
-        "rustfmt",
         "shellcheck",
         "shfmt",
         "stylua",
