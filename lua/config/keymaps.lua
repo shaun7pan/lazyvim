@@ -38,3 +38,5 @@ map("n", "<leader>gd", "<cmd>Telescope git_bcommits<CR>", { desc = "buffer histo
 map("n", "<leader>bh", "<cmd>BufferLineCloseLeft<CR>", { desc = "Buffer Close Left", silent = true })
 map("n", "<leader>bl", "<cmd>BufferLineCloseRight<CR>", { desc = "Buffer Close Right", silent = true })
 map("n", "<leader>bs", "<cmd>BufferLineSortByDirectory<CR>", { desc = "Buffer Sort by Directory", silent = true })
+--dir-telescope
+map("n", "<leader>fd", "<cmd>FileInDirectory<CR>", { desc = "Find In Directory", silent = true })
