@@ -2,21 +2,27 @@ return {
   -- change some telescope options and a keymap to browse plugin files
   {
     "nvim-telescope/telescope.nvim",
+    dependencies = {
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      { "nvim-telescope/telescope-file-browser.nvim" },
+    },
     keys = {
-      -- add a keymap to browse plugin files
-      -- stylua: ignore
       {
         "<leader><space>",
-        function() require("telescope.builtin").live_grep({ cwd = false }) end,
+        function()
+          require("telescope.builtin").live_grep({ cwd = false })
+        end,
         desc = "Grep (cwd)",
       },
-      {
-        "<leader>fp",
-        function()
-          require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
-        end,
-        desc = "Find Plugin File",
-      },
+      -- add a keymap to browse plugin files
+      -- stylua: ignore
+      -- {
+      --   "<leader>fp",
+      --   function()
+      --     require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
+      --   end,
+      --   desc = "Find Plugin File",
+      -- },
     },
     -- change some options
     opts = {
@@ -27,16 +33,11 @@ return {
         winblend = 0,
       },
     },
-  },
-  -- add telescope-fzf-native
-  {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
-    },
+    config = function(_, opts)
+      local telescope = require("telescope")
+      telescope.setup(opts)
+      telescope.load_extension("fzf")
+      telescope.load_extension("file_browser")
+    end,
   },
 }
