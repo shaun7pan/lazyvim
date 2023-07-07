@@ -32,6 +32,12 @@ return {
         sorting_strategy = "ascending",
         winblend = 0,
       },
+      extensions = {
+        file_browser = {
+          theme = "ivy",
+          grouped = true,
+        },
+      },
     },
     config = function(_, opts)
       local telescope = require("telescope")
