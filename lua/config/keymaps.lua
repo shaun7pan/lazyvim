@@ -39,4 +39,10 @@ map("n", "<leader>bh", "<cmd>BufferLineCloseLeft<CR>", { desc = "Buffer Close Le
 map("n", "<leader>bl", "<cmd>BufferLineCloseRight<CR>", { desc = "Buffer Close Right", silent = true })
 map("n", "<leader>bs", "<cmd>BufferLineSortByDirectory<CR>", { desc = "Buffer Sort by Directory", silent = true })
 --Telescope-file-browser
-map("n", "<leader>ft", "<cmd>Telescope file_browser<CR>", { desc = "Telescope File Browser", silent = true })
+map("n", "<leader>T", "<cmd>Telescope file_browser<CR>", { desc = "Telescope File Browser", silent = true })
+map(
+  "n",
+  "<leader>t",
+  "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
+  { desc = "Telescope File Browser", silent = true }
+)
