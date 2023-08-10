@@ -31,11 +31,18 @@ return {
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
         winblend = 0,
+        -- path_display = {
+        --   shorten = {
+        --     len = 1,
+        --     exclude = { 1, -1 },
+        --   },
+        -- },
       },
       extensions = {
         file_browser = {
           theme = "ivy",
           grouped = true,
+          respect_gitignore = false,
         },
       },
     },
