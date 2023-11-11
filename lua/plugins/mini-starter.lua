@@ -20,7 +20,7 @@ return {
     header = logo,
     items = {
       new_section("Find file",       "Telescope find_files",                                   "Telescope"),
-      new_section("Recent files",    "Telescope oldfiles",                                     "Telescope"),
+      new_section("Recent files",    "Telescope oldfiles cwd_only=true",                       "Telescope"),
       new_section("Grep text",       "Telescope live_grep",                                    "Telescope"),
       new_section("Config",          "lua require('lazyvim.util').telescope.config_files()()", "Config"),
       new_section("Extras",          "LazyExtras",                                             "Config"),
