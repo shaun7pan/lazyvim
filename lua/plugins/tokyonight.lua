@@ -8,9 +8,6 @@ return {
         sidebars = "transparent",
         floats = "transparent",
       },
-      require("notify").setup({
-        background_colour = "#000000",
-      }),
     },
   },
 }
