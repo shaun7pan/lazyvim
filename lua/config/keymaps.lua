@@ -46,3 +46,4 @@ map(
   "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
   { desc = "Telescope File Browser", silent = true }
 )
+map("n", "<leader>ua", "<cmd>lua require('notify').dismiss()<CR>", { desc = "Abort all notifications", silent = true })
