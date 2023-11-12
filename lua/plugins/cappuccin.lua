@@ -2,7 +2,7 @@ return {
   {
     "catppuccin/nvim",
     lazy = false,
-    enabled = false,
+    -- enabled = false,
     name = "catppuccin",
   },
 }
