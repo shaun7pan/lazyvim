@@ -47,3 +47,4 @@ map(
   { desc = "Telescope File Browser", silent = true }
 )
 map("n", "<leader>ua", "<cmd>lua require('notify').dismiss()<CR>", { desc = "Abort all notifications", silent = true })
+map("n", "<leader>uo", ":TransparentToggle<CR>", { desc = "Enable", silent = true })
