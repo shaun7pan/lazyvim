@@ -4,7 +4,7 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-      { "nvim-telescope/telescope-file-browser.nvim" },
+      -- { "nvim-telescope/telescope-file-browser.nvim" },
     },
     keys = {
       {
@@ -39,18 +39,18 @@ return {
         -- },
       },
       extensions = {
-        file_browser = {
-          theme = "ivy",
-          grouped = true,
-          respect_gitignore = false,
-        },
+        -- file_browser = {
+        --   theme = "ivy",
+        --   grouped = true,
+        --   respect_gitignore = false,
+        -- },
       },
     },
     config = function(_, opts)
       local telescope = require("telescope")
       telescope.setup(opts)
       telescope.load_extension("fzf")
-      telescope.load_extension("file_browser")
+      -- telescope.load_extension("file_browser")
     end,
   },
 }
