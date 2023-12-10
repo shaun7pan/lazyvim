@@ -48,3 +48,4 @@ map("n", "<leader>bs", "<cmd>BufferLineSortByDirectory<CR>", { desc = "Buffer So
 -- )
 -- map("n", "<leader>ua", "<cmd>lua require('notify').dismiss()<CR>", { desc = "Abort all notifications", silent = true })
 map("n", "<leader>uo", ":TransparentToggle<CR>", { desc = "Enable", silent = true })
+map("n", "<leader>cj", ":%!yq -p yaml -o json<CR>", { desc = "Convert YAML to JSON", silent = true })
