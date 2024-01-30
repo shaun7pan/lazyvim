@@ -3,9 +3,12 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    -- opts = {
-    --   transparent_background = true,
-    -- },
     priority = 1000,
+    opts = {
+      transparent_background = true,
+      dim_inactive = {
+        enable = true,
+      },
+    },
   },
 }

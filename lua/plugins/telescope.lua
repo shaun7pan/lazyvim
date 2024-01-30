@@ -14,6 +14,13 @@ return {
         end,
         desc = "Grep (cwd)",
       },
+      {
+        "<leader>s/",
+        function()
+          require("telescope.builtin").search_history()
+        end,
+        desc = "Search History",
+      },
       -- add a keymap to browse plugin files
       -- stylua: ignore
       -- {

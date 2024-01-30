@@ -2,7 +2,8 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
-vim.cmd([[ hi NotifyBackground guibg = #000000 ]])
+-- vim.cmd([[ hi NotifyBackground guibg = #000000 ]])
+-- vim.cmd([[ highlight Normal guibg=NONE ]])
 
 -- multi cursor alternative (visual highlight first, better than * cgn)
 
