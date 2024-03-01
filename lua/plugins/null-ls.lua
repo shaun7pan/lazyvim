@@ -11,12 +11,9 @@ return {
           extra_args = { "-i", "2", "-ci" },
         })
       )
-      table.insert(opts.sources, nls.builtins.code_actions.shellcheck)
       table.insert(opts.sources, nls.builtins.formatting.goimports)
       table.insert(opts.sources, nls.builtins.diagnostics.golangci_lint)
       table.insert(opts.sources, nls.builtins.formatting.black)
-      table.insert(opts.sources, nls.builtins.formatting.rustfmt)
-      table.insert(opts.sources, nls.builtins.formatting.jq)
       table.insert(opts.sources, nls.builtins.formatting.terraform_fmt)
       -- table.insert(opts.sources, nls.builtins.formatting.yq)
     end,
