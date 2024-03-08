@@ -34,20 +34,14 @@ return {
           -- end
           fallback()
         end, { "i", "s" }),
-        -- ... rest of your mappings
       })
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<S-CR>"] = cmp.mapping(function(fallback)
-          -- if cmp.visible() then
-          --   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, true, true), "n", true)
-          -- else
-          --   fallback()
-          -- end
           fallback()
         end, { "i", "s" }),
-        -- ... rest of your mappings
       })
+
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -65,6 +59,7 @@ return {
             fallback()
           end
         end, { "i", "s" }),
+
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
