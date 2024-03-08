@@ -24,6 +24,18 @@ return {
       local luasnip = require("luasnip")
       local cmp = require("cmp")
 
+      -- disable enter key confirm and make it a normal enter
+      opts.mapping = vim.tbl_extend("force", opts.mapping, {
+        ["<CR>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, true, true), "n", true)
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        -- ... rest of your mappings
+      })
+
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
