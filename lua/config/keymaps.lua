@@ -67,15 +67,21 @@ vim.keymap.set(
 --   { desc = "Telescope File Browser", silent = true }
 -- )
 -- map("n", "<leader>ua", "<cmd>lua require('notify').dismiss()<CR>", { desc = "Abort all notifications", silent = true })
+
 vim.keymap.set("n", "<leader>uo", ":TransparentToggle<CR>", { desc = "Enable", silent = true })
 vim.keymap.set("n", "<leader>cj", ":%!yq -p yaml -o json<CR>", { desc = "Convert YAML to JSON", silent = true })
 vim.keymap.set("i", "<S-CR>", "<Esc>o", { desc = "Insert new line", silent = true })
 
 local Util = require("lazyvim.util")
-vim.keymap.set("n", "<leader>ft", function()
+-- vim.keymap.del("n", "<c-_>")
+-- also works for <c-7>
+vim.keymap.set("n", "<c-_>", function()
   Util.terminal.open({ "bash", "-l" }, { cwd = Util.root.get() })
 end, { desc = "Terminal (root dir)" })
 
 vim.keymap.set("n", "<leader>fT", function()
   Util.terminal.open({ "bash", "-l" })
 end, { desc = "Terminal (cwd)" })
+
+-- Example of delete keymap
+--vim.keymap.del("n", "<leader>ft")
