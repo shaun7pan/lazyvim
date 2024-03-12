@@ -3,41 +3,61 @@
 -- Add any additional keymaps here
 --
 
-local function map(mode, lhs, rhs, opts)
-  local keys = require("lazy.core.handler").handlers.keys
-  ---@cast keys LazyKeysHandler
-  -- do not create the keymap if a lazy keys handler exists
-  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-    opts = opts or {}
-    opts.silent = opts.silent ~= false
-    vim.keymap.set(mode, lhs, rhs, opts)
-  end
-end
+-- local function map(mode, lhs, rhs, opts)
+--   local keys = require("lazy.core.handler").handlers.keys
+--   ---@cast keys LazyKeysHandler
+--   -- do not create the keymap if a lazy keys handler exists
+--   if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+--     opts = opts or {}
+--     opts.silent = opts.silent ~= false
+--     vim.keymap.set(mode, lhs, rhs, opts)
+--   end
+-- end
 
 --accelerated-jk.nvim
-map("n", "j", "<Plug>(accelerated_jk_gj)", {})
-map("n", "k", "<Plug>(accelerated_jk_gk)", {})
-map("n", "<C-q>", ":q<CR>", { silent = true })
-map("n", "<C-j>", ":<C-U>TmuxNavigateDown<cr>", { silent = true })
-map("n", "<C-k>", ":<C-U>TmuxNavigateUp<cr>", { silent = true })
-map("n", "<C-h>", ":<C-U>TmuxNavigateLeft<cr>", { silent = true })
-map("n", "<C-l>", ":<C-U>TmuxNavigateRight<cr>", { silent = true })
-map("n", "<leader>ad", "<cmd>lua require('harpoon.mark').add_file()<CR>", { silent = true })
-map("n", "<C-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", { silent = true })
-map("n", "<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", { desc = "harpoon select 1", silent = true })
-map("n", "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", { desc = "harpoon select 2", silent = true })
-map("n", "<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", { desc = "harpoon select 3", silent = true })
-map("n", "<C-p>", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Markdown preview", silent = true })
-map("i", "<C-h>", "<Left>", { desc = "move left", silent = true })
-map("i", "<C-l>", "<Right>", { desc = "move right", silent = true })
-map("i", "<C-j>", "<Down>", { desc = "move down", silent = true })
-map("i", "<C-k>", "<Up>", { desc = "move up", silent = true })
--- map("x", "<leader>p", [["_dP]], { desc = "paste without yank", silent = true })
-map("i", "jk", "<Esc>", { desc = "escape", silent = true })
-map("n", "<leader>gd", "<cmd>Telescope git_bcommits<CR>", { desc = "buffer history diff", silent = true })
-map("n", "<leader>bh", "<cmd>BufferLineCloseLeft<CR>", { desc = "Buffer Close Left", silent = true })
-map("n", "<leader>bl", "<cmd>BufferLineCloseRight<CR>", { desc = "Buffer Close Right", silent = true })
-map("n", "<leader>bs", "<cmd>BufferLineSortByDirectory<CR>", { desc = "Buffer Sort by Directory", silent = true })
+vim.keymap.set("n", "j", "<Plug>(accelerated_jk_gj)", {})
+vim.keymap.set("n", "k", "<Plug>(accelerated_jk_gk)", {})
+vim.keymap.set("n", "<C-q>", ":q<CR>", { silent = true })
+vim.keymap.set("n", "<C-j>", ":<C-U>TmuxNavigateDown<cr>", { silent = true })
+vim.keymap.set("n", "<C-k>", ":<C-U>TmuxNavigateUp<cr>", { silent = true })
+vim.keymap.set("n", "<C-h>", ":<C-U>TmuxNavigateLeft<cr>", { silent = true })
+vim.keymap.set("n", "<C-l>", ":<C-U>TmuxNavigateRight<cr>", { silent = true })
+vim.keymap.set("n", "<leader>ad", "<cmd>lua require('harpoon.mark').add_file()<CR>", { silent = true })
+vim.keymap.set("n", "<C-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", { silent = true })
+vim.keymap.set(
+  "n",
+  "<leader>1",
+  "<cmd>lua require('harpoon.ui').nav_file(1)<CR>",
+  { desc = "harpoon select 1", silent = true }
+)
+vim.keymap.set(
+  "n",
+  "<leader>2",
+  "<cmd>lua require('harpoon.ui').nav_file(2)<CR>",
+  { desc = "harpoon select 2", silent = true }
+)
+vim.keymap.set(
+  "n",
+  "<leader>3",
+  "<cmd>lua require('harpoon.ui').nav_file(3)<CR>",
+  { desc = "harpoon select 3", silent = true }
+)
+vim.keymap.set("n", "<C-p>", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Markdown preview", silent = true })
+vim.keymap.set("i", "<C-h>", "<Left>", { desc = "move left", silent = true })
+vim.keymap.set("i", "<C-l>", "<Right>", { desc = "move right", silent = true })
+vim.keymap.set("i", "<C-j>", "<Down>", { desc = "move down", silent = true })
+vim.keymap.set("i", "<C-k>", "<Up>", { desc = "move up", silent = true })
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "paste without yank", silent = true })
+vim.keymap.set("i", "jk", "<Esc>", { desc = "escape", silent = true })
+vim.keymap.set("n", "<leader>gd", "<cmd>Telescope git_bcommits<CR>", { desc = "buffer history diff", silent = true })
+vim.keymap.set("n", "<leader>bh", "<cmd>BufferLineCloseLeft<CR>", { desc = "Buffer Close Left", silent = true })
+vim.keymap.set("n", "<leader>bl", "<cmd>BufferLineCloseRight<CR>", { desc = "Buffer Close Right", silent = true })
+vim.keymap.set(
+  "n",
+  "<leader>bs",
+  "<cmd>BufferLineSortByDirectory<CR>",
+  { desc = "Buffer Sort by Directory", silent = true }
+)
 --Telescope-file-browser
 -- map("n", "<leader>T", "<cmd>Telescope file_browser<CR>", { desc = "Telescope File Browser", silent = true })
 -- map(
@@ -47,7 +67,15 @@ map("n", "<leader>bs", "<cmd>BufferLineSortByDirectory<CR>", { desc = "Buffer So
 --   { desc = "Telescope File Browser", silent = true }
 -- )
 -- map("n", "<leader>ua", "<cmd>lua require('notify').dismiss()<CR>", { desc = "Abort all notifications", silent = true })
-map("n", "<leader>uo", ":TransparentToggle<CR>", { desc = "Enable", silent = true })
-map("n", "<leader>cj", ":%!yq -p yaml -o json<CR>", { desc = "Convert YAML to JSON", silent = true })
+vim.keymap.set("n", "<leader>uo", ":TransparentToggle<CR>", { desc = "Enable", silent = true })
+vim.keymap.set("n", "<leader>cj", ":%!yq -p yaml -o json<CR>", { desc = "Convert YAML to JSON", silent = true })
+vim.keymap.set("i", "<S-CR>", "<Esc>o", { desc = "Insert new line", silent = true })
 
-map("i", "<S-CR>", "<Esc>o", { desc = "Insert new line", silent = true })
+local Util = require("lazyvim.util")
+vim.keymap.set("n", "<leader>ft", function()
+  Util.terminal.open({ "bash", "-l" }, { cwd = Util.root.get() })
+end, { desc = "Terminal (root dir)" })
+
+vim.keymap.set("n", "<leader>fT", function()
+  Util.terminal.open({ "bash", "-l" })
+end, { desc = "Terminal (cwd)" })
