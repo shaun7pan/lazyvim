@@ -79,10 +79,10 @@ vim.keymap.set("n", "<c-_>", function()
   Util.terminal.open({ "bash", "-l" }, { cwd = Util.root.get(), border = "single" })
 end, { desc = "Terminal (root dir)" })
 
-vim.keymap.set("n", "<leader>fT", function()
-  Util.terminal.open({ "bash", "-l" })
-end, { desc = "Terminal (cwd)" })
-
+-- vim.keymap.set("n", "<leader>fT", function()
+--   Util.terminal.open({ "bash", "-l" })
+-- end, { desc = "Terminal (cwd)" })
+--
 -- Example of delete keymap
 --vim.keymap.del("n", "<leader>ft")
 vim.keymap.del("t", "<c-h>")
