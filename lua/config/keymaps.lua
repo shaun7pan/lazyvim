@@ -76,7 +76,7 @@ local Util = require("lazyvim.util")
 -- vim.keymap.del("n", "<c-_>")
 -- also works for <c-7>
 vim.keymap.set("n", "<c-_>", function()
-  Util.terminal.open({ "bash", "-l" }, { cwd = Util.root.get() })
+  Util.terminal.open({ "bash", "-l" }, { cwd = Util.root.get(), border = "single" })
 end, { desc = "Terminal (root dir)" })
 
 vim.keymap.set("n", "<leader>fT", function()
@@ -85,3 +85,7 @@ end, { desc = "Terminal (cwd)" })
 
 -- Example of delete keymap
 --vim.keymap.del("n", "<leader>ft")
+vim.keymap.del("t", "<c-h>")
+vim.keymap.del("t", "<c-j>")
+vim.keymap.del("t", "<c-k>")
+vim.keymap.del("t", "<c-l>")
