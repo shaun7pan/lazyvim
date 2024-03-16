@@ -26,7 +26,7 @@ return {
 
       -- disable enter key confirm and make it a normal enter
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
-        ["<C-CR>"] = cmp.mapping(function(fallback)
+        ["<S-CR>"] = cmp.mapping(function(fallback)
           -- if cmp.visible() then
           --   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, true, true), "n", true)
           -- else
