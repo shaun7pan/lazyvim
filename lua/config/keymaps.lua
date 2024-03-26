@@ -75,9 +75,9 @@ vim.keymap.set("i", "<S-CR>", "<Esc>o", { desc = "Insert new line", silent = tru
 local Util = require("lazyvim.util")
 -- vim.keymap.del("n", "<c-_>")
 -- also works for <c-7>
--- vim.keymap.set("n", "<c-cr>", function()
---   Util.terminal.open({ "bash", "-l" }, { cwd = Util.root.get(), border = "single" })
--- end, { desc = "Terminal (root dir)" })
+vim.keymap.set("n", "<c-_>", function()
+  Util.terminal.open({ "bash", "-l" }, { cwd = Util.root.get(), border = "single" })
+end, { desc = "Terminal (root dir)" })
 --
 -- vim.keymap.set("t", "<c-cr>", function()
 --   Util.terminal.open({ "bash", "-l" }, { cwd = Util.root.get(), border = "single" })
