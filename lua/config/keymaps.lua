@@ -42,7 +42,7 @@ vim.keymap.set(
   "<cmd>lua require('harpoon.ui').nav_file(3)<CR>",
   { desc = "harpoon select 3", silent = true }
 )
-vim.keymap.set("n", "<C-p>", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Markdown preview", silent = true })
+-- vim.keymap.set("n", "<C-p>", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Markdown preview", silent = true })
 vim.keymap.set("i", "<C-h>", "<Left>", { desc = "move left", silent = true })
 vim.keymap.set("i", "<C-l>", "<Right>", { desc = "move right", silent = true })
 vim.keymap.set("i", "<C-j>", "<Down>", { desc = "move down", silent = true })

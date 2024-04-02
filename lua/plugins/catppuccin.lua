@@ -9,6 +9,12 @@ return {
       dim_inactive = {
         enable = true,
       },
+      color_overrides = {
+
+        mocha = {
+          text = "#9f9f9f",
+        },
+      },
     },
   },
 }
