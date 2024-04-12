@@ -72,23 +72,20 @@ vim.keymap.set("n", "<leader>uo", ":TransparentToggle<CR>", { desc = "Enable", s
 vim.keymap.set("n", "<leader>cj", ":%!yq -p yaml -o json<CR>", { desc = "Convert YAML to JSON", silent = true })
 vim.keymap.set("i", "<S-CR>", "<Esc>o", { desc = "Insert new line", silent = true })
 
-local Util = require("lazyvim.util")
--- vim.keymap.del("n", "<c-_>")
--- also works for <c-7>
-vim.keymap.set("n", "<c-_>", function()
-  Util.terminal.open({ "bash", "-l" }, { cwd = Util.root.get(), border = "single" })
-end, { desc = "Terminal (root dir)" })
---
--- vim.keymap.set("t", "<c-cr>", function()
---   Util.terminal.open({ "bash", "-l" }, { cwd = Util.root.get(), border = "single" })
+-- floating terminal
+local lazyterm = function()
+  LazyVim.terminal({ "bash", "-l" }, { cwd = LazyVim.root(), border = "single", ctrl_hjkl = false })
+end
+vim.keymap.set("n", "<leader>ft", lazyterm, { desc = "Terminal (Root Dir)" })
+vim.keymap.set("n", "<leader>fT", function()
+  LazyVim.terminal()
+end, { desc = "Terminal (cwd)" })
+vim.keymap.set("n", "<c-/>", lazyterm, { desc = "Terminal (Root Dir)" })
+vim.keymap.set("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
+
+-- local Util = require("lazyvim.util")
+-- -- vim.keymap.del("n", "<c-_>")
+-- -- also works for <c-7>
+-- vim.keymap.set("n", "<c-_>", function()
+--   Util.terminal.open({ "bash", "-l" }, { cwd = Util.root.get(), border = "single", ctrl_hjkl = false })
 -- end, { desc = "Terminal (root dir)" })
--- vim.keymap.set("n", "<leader>fT", function()
---   Util.terminal.open({ "bash", "-l" })
--- end, { desc = "Terminal (cwd)" })
---
--- Example of delete keymap
---vim.keymap.del("n", "<leader>ft")
-vim.keymap.del("t", "<c-h>")
-vim.keymap.del("t", "<c-j>")
-vim.keymap.del("t", "<c-k>")
-vim.keymap.del("t", "<c-l>")
