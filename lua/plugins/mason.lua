@@ -12,7 +12,7 @@ return {
         "jq",
         "lua-language-server",
         "pyright",
-        "rust-analyzer",
+        -- "rust-analyzer",
         "shellcheck",
         "shfmt",
         "stylua",

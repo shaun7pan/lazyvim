@@ -16,32 +16,13 @@
 
 --accelerated-jk.nvim
 vim.keymap.set("n", "j", "<Plug>(accelerated_jk_gj)", {})
+
 vim.keymap.set("n", "k", "<Plug>(accelerated_jk_gk)", {})
 vim.keymap.set("n", "<C-q>", ":q<CR>", { silent = true })
 vim.keymap.set("n", "<C-j>", ":<C-U>TmuxNavigateDown<cr>", { silent = true })
 vim.keymap.set("n", "<C-k>", ":<C-U>TmuxNavigateUp<cr>", { silent = true })
 vim.keymap.set("n", "<C-h>", ":<C-U>TmuxNavigateLeft<cr>", { silent = true })
 vim.keymap.set("n", "<C-l>", ":<C-U>TmuxNavigateRight<cr>", { silent = true })
-vim.keymap.set("n", "<leader>ad", "<cmd>lua require('harpoon.mark').add_file()<CR>", { silent = true })
-vim.keymap.set("n", "<C-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", { silent = true })
-vim.keymap.set(
-  "n",
-  "<leader>1",
-  "<cmd>lua require('harpoon.ui').nav_file(1)<CR>",
-  { desc = "harpoon select 1", silent = true }
-)
-vim.keymap.set(
-  "n",
-  "<leader>2",
-  "<cmd>lua require('harpoon.ui').nav_file(2)<CR>",
-  { desc = "harpoon select 2", silent = true }
-)
-vim.keymap.set(
-  "n",
-  "<leader>3",
-  "<cmd>lua require('harpoon.ui').nav_file(3)<CR>",
-  { desc = "harpoon select 3", silent = true }
-)
 -- vim.keymap.set("n", "<C-p>", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Markdown preview", silent = true })
 vim.keymap.set("i", "<C-h>", "<Left>", { desc = "move left", silent = true })
 vim.keymap.set("i", "<C-l>", "<Right>", { desc = "move right", silent = true })
