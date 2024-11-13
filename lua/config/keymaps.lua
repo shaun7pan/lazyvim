@@ -55,11 +55,11 @@ vim.keymap.set("i", "<S-CR>", "<Esc>o", { desc = "Insert new line", silent = tru
 
 -- floating terminal
 local lazyterm = function()
-  LazyVim.terminal({ "bash", "-l" }, { cwd = LazyVim.root(), border = "rounded", ctrl_hjkl = false })
+  Snacks.terminal({ "bash", "-l" }, { cwd = LazyVim.root(), ctrl_hjkl = false })
 end
 vim.keymap.set("n", "<leader>ft", lazyterm, { desc = "Terminal (Root Dir)" })
 vim.keymap.set("n", "<leader>fT", function()
-  LazyVim.terminal()
+  Snacks.terminal()
 end, { desc = "Terminal (cwd)" })
 vim.keymap.set("n", "<c-/>", lazyterm, { desc = "Terminal (Root Dir)" })
 vim.keymap.set("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
