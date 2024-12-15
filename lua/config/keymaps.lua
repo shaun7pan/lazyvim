@@ -30,7 +30,7 @@ vim.keymap.set("i", "<C-j>", "<Down>", { desc = "move down", silent = true })
 vim.keymap.set("i", "<C-k>", "<Up>", { desc = "move up", silent = true })
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "paste without yank", silent = true })
 vim.keymap.set("i", "jk", "<Esc>", { desc = "escape", silent = true })
-vim.keymap.set("n", "<leader>gd", "<cmd>Telescope git_bcommits<CR>", { desc = "buffer history diff", silent = true })
+-- vim.keymap.set("n", "<leader>gd", "<cmd>Telescope git_bcommits<CR>", { desc = "buffer history diff", silent = true })
 vim.keymap.set("n", "<leader>bh", "<cmd>BufferLineCloseLeft<CR>", { desc = "Buffer Close Left", silent = true })
 vim.keymap.set("n", "<leader>bl", "<cmd>BufferLineCloseRight<CR>", { desc = "Buffer Close Right", silent = true })
 vim.keymap.set(
