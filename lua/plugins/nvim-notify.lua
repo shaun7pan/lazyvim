@@ -1,3 +1,3 @@
 return {
-  { "rcarriga/nvim-notify", enable = false },
+  -- { "rcarriga/nvim-notify", enable = false },
 }
