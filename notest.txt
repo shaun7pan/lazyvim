@@ -1,5 +1,0 @@
-Nodes are the "machines" on which build agents run. By creating the node, we register en entry for the runtime where the agent is running. The node will be monitored by Jenkins master to determine the status of the jenkins agent. After node been created, there will be secret token generated for the agent. It can be used by the agent to setup the connection to master.
-
-The next steps will be deploying jenkins agent into customer namespace inside cluster, but before that, we need to build the image. There is public jenkins agent image available on DockerHub. 
-
-
